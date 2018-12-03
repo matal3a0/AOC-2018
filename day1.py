@@ -7,6 +7,6 @@ def main():
     for line in sys.stdin:
         data.append(int(line))
 
-    print("Sum: " + str(sum(data)))
+    print("Sum", sum(data))
 
 main()
