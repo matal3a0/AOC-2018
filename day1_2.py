@@ -5,7 +5,7 @@ import sys
 def main():
     c = 0
     p = 0
-    seen = []
+    seen = set() 
     data = []
     for line in sys.stdin:
         data.append(line.strip())
@@ -17,7 +17,7 @@ def main():
         if c in seen:
             break
         else:
-            seen.append(c)
+            seen.add(c)
    
         p = (p + 1) % s
 
