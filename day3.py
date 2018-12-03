@@ -5,10 +5,8 @@ import sys
 def main():
     fabric = [[0 for i in range(1000)] for i in range(1000)]
     overlaps = 0
-    lc = 0
 
     for line in sys.stdin:
-        lc += 1
         d = line.strip().split()
         startx = int(d[2].split(',')[0])
         starty = int(d[2].split(',')[1].replace(':',''))
