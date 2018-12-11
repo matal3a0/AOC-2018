@@ -1,20 +1,22 @@
 #!/bin/python3
 
-import sys
+import sys,re
 
 def main():
     fabric = [[0 for i in range(1000)] for i in range(1000)]
     overlaps = 0
 
     for line in sys.stdin:
-        d = line.strip().split()
-        startx = int(d[2].split(',')[0])
-        starty = int(d[2].split(',')[1].replace(':',''))
-        x = int(d[3].split('x')[0])
-        y = int(d[3].split('x')[1])
+        p = re.compile(r'\d+')
+        d = p.findall(line)
 
-        for a in range(startx,startx+x):
-            for b in range(starty,starty+y):
+        sx = int(d[1])
+        sy = int(d[2])
+        x = int(d[3])
+        y = int(d[4])
+
+        for a in range(sx,sx+x):
+            for b in range(sy,sy+y):
                 fabric[a][b] += 1
 
     for a in range(1000):
